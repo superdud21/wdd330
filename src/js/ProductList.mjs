@@ -1,9 +1,9 @@
 import { renderListWithTemplate } from "./utils.mjs";
 
 export default class ProductList {
-    constructor(category, datasource, listElement) {
+    constructor(category, dataSource, listElement) {
         this.category = category;
-        this.datasource = datasource;
+        this.dataSource = dataSource;
         this.listElement = listElement;
     }
 
@@ -17,7 +17,7 @@ export default class ProductList {
     }
 }
 
-    function productListCard() {
+    function productListCard(product) {
         return `
         <li class="product-card">
             <a href="product_pages/?product=${product.Id}">

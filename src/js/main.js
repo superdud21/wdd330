@@ -5,6 +5,6 @@ const productData = new ProductData('tents');
 
 const elem = document.querySelector('.product-list');
 
-const list = new ProductList('Tents', productData, elem)
+const list = new ProductList('tents', productData, elem)
 
 list.init()

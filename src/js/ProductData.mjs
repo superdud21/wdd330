@@ -13,10 +13,21 @@ export default class ProductData {
   }
 
   getData() {
+    console.log("Trying to fetch:", this.path);
     return fetch(this.path)
-      .then(convertToJson)
-      .then((data) => data);
+      .then((res) => {
+        console.log("Fetch response:", res);
+        return convertToJson(res);
+      })
+      .then((data) => {
+        console.log("Parsed JSON:", data);
+        return data;
+      })
+      .catch((err) => {
+        console.error("Failed to fetch data:", err);
+      });
   }
+
   
   async findProductById(id) {
     const products = await this.getData();

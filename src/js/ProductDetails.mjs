@@ -20,9 +20,9 @@ export default class ProductDetails {
             .addEventListener('click', this.addProductToCart.bind(this));
     }
 
-    addProductToCart(product) {
+    addProductToCart() {
         const cart = getLocalStorage('so-cart') || [];
-        cart.push(product);
+        cart.push(this.product);
         setLocalStorage('so-cart', cart);
     }
 
